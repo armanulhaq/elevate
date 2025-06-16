@@ -1,5 +1,5 @@
 const MyJobs = () => {
-    return <div className="min-h-screen">my job</div>;
+    return <div className="my-20">my job</div>;
 };
 
 export default MyJobs;
