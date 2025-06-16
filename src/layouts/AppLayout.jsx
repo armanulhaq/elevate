@@ -1,12 +1,15 @@
+import Header from "@/components/header";
 import { Outlet } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const AppLayout = () => {
     return (
         <div>
-            <div className="grid-background"></div>
-            <main></main>
-            <Outlet />
-            {/* For / route, LandingPage will be the outlet... */}
+            <main className="">
+                <Outlet />
+            </main>
+            <Header />
+            <Footer />
         </div>
     );
 };
