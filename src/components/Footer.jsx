@@ -14,7 +14,7 @@ const Footer = () => {
                             </div>
                             <span className="text-2xl font-bold">Elevate</span>
                         </div>
-                        <p className="text-gray-400 mb-6 leading-relaxed max-w-md">
+                        <p className="text-gray-400 mb-6 leading-relaxed ">
                             Connecting talented professionals with their dream
                             opportunities. Built for the modern workforce.
                         </p>

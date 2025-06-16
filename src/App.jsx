@@ -6,23 +6,68 @@ import JobListing from "./pages/JobListing";
 import JobPost from "./pages/JobPost";
 import SavedJobs from "./pages/SavedJobs";
 import MyJobs from "./pages/MyJobs";
+import ProtectedRoute from "./components/protected-routes";
+import JobPage from "./pages/JobPage";
 
 const router = createBrowserRouter([
-    //It creates the routes of your app. Here are all the pages in my app and what component to show for each URL.
     {
-        element: <AppLayout />, //this is the parent component and depending on the route Outlet inside AppLayout will be replaced with that element
+        element: <AppLayout />,
         children: [
-            { path: "/", element: <LandingPage /> },
-            { path: "/onboarding", element: <Onboarding /> },
-            { path: "/jobs", element: <JobListing /> },
-            { path: "/job/:id", element: <Onboarding /> },
-            { path: "/post-job", element: <JobPost /> },
-            { path: "/saved-jobs", element: <SavedJobs /> },
-            { path: "/my-jobs", element: <MyJobs /> },
+            {
+                path: "/",
+                element: <LandingPage />,
+            },
+            {
+                path: "/onboarding",
+                element: (
+                    <ProtectedRoute>
+                        <Onboarding />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "/jobs",
+                element: (
+                    <ProtectedRoute>
+                        <JobListing />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "/post-job",
+                element: (
+                    <ProtectedRoute>
+                        <JobPost />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "/my-jobs",
+                element: (
+                    <ProtectedRoute>
+                        <MyJobs />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "/saved-jobs",
+                element: (
+                    <ProtectedRoute>
+                        <SavedJobs />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "/job/:id",
+                element: (
+                    <ProtectedRoute>
+                        <JobPage />
+                    </ProtectedRoute>
+                ),
+            },
         ],
     },
 ]);
-
 function App() {
     return (
         <RouterProvider router={router} />

@@ -1,7 +1,5 @@
-import React from "react";
-
 const JobPage = () => {
-    return <div></div>;
+    return <div>Job Page</div>;
 };
 
 export default JobPage;

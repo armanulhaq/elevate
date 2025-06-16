@@ -7,6 +7,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
     return (
@@ -36,15 +37,18 @@ const LandingPage = () => {
 
                     {/* Action Buttons */}
                     <div className="flex gap-4 sm:gap-6 justify-center items-center">
-                        <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-xl py-6 px-6  shadow-md hover:scale-105 transition-transform duration-200">
-                            <Search className=" w-5 h-5" />
-                            Find Jobs
-                        </Button>
-
-                        <Button className="bg-white text-gray-700 border border-gray-300 font-xl font-extrabold py-6 px-9  shadow-sm hover:bg-gray-50 hover:scale-105 transition-transform duration-200">
-                            <Briefcase className="w-5 h-5" />
-                            Post Jobs
-                        </Button>
+                        <Link to="/jobs">
+                            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-xl py-6 px-6  shadow-md hover:scale-105 transition-transform duration-200">
+                                <Search className=" w-5 h-5" />
+                                Find Jobs
+                            </Button>
+                        </Link>
+                        <Link to="post-job">
+                            <Button className="bg-white text-gray-700 border border-gray-300 font-xl font-extrabold py-6 px-9  shadow-sm hover:bg-gray-50 hover:scale-105 transition-transform duration-200">
+                                <Briefcase className="w-5 h-5" />
+                                Post Jobs
+                            </Button>
+                        </Link>
                     </div>
 
                     {/* Stats */}

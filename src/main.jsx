@@ -10,4 +10,12 @@ if (!PUBLISHABLE_KEY) {
     throw new Error("Missing Publishable Key");
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <ClerkProvider
+        appearance={{}}
+        publishableKey={PUBLISHABLE_KEY}
+        afterSignOutUrl="/"
+    >
+        <App />
+    </ClerkProvider>
+);
